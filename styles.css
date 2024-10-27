@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: hsl(218, 23%, 16%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: hsl(217, 19%, 24%);
+  text-align: center;
+  padding: 48px;
+  border-radius: 10px;
+  display: grid;
+  row-gap: 35px; /*35px*/
+  position: relative;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 14px; /*14px*/
+  letter-spacing: 5px;
+  color: hsl(150, 100%, 66%);
+}
+
+p {
+  font-size: 32px; /*32px*/
+  width: 435px; /*435px*/
+  font-weight: bold;
+  color: hsl(193, 38%, 86%);
+}
+
+@media (max-width: 540px) {
+  h1 {
+    font-size: 12px;
+  }
+
+  main {
+    padding: 60px 24px;
+  }
+
+  p {
+    width: 285px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  main {
+    padding: 60px 0;
+  }
+
+  p {
+    width: 250px;
+    font-size: 22px;
+  }
+}
+
+button {
+  width: 65px;
+  height: 65px;
+  padding: 20px 15px;
+  border-radius: 50%;
+  background-color: hsl(150, 100%, 66%);
+  border: none;
+  position: absolute;
+  top: 90%;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px 15px hsla(150, 100%, 66%, 0.3);
+}
