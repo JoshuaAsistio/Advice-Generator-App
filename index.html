@@ -8,26 +8,23 @@
   </head>
   <body>
     <main>
-      <h1>ADVICE #<span id="advice-number">117</span></h1>
+      <h1 id="advice-number">Generating your advice</h1>
 
-      <p>
-        "<span id="advice"
-          >It is easy to sit up and take notice, what's difficult is getting up
-          and taking action.</span
-        >"
-      </p>
+      <p id="advice">Please wait a moment...</p>
 
       <picture>
         <source
           media="(max-width: 465px)"
           srcset="images\pattern-divider-mobile.svg"
         />
-        <img src="images/pattern-divider-desktop.svg" alt="" />
+        <img src="images/pattern-divider-desktop.svg" alt="divider pattern" />
       </picture>
 
-      <button>
+      <button id="give-random-advice">
         <img src="images/icon-dice.svg" alt="dice" />
       </button>
     </main>
+
+    <script src="index.js"></script>
   </body>
 </html>
