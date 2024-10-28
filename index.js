@@ -10,18 +10,25 @@ diceButton.addEventListener("click", () => {
 });
 
 const generateRandomAdvice = () => {
+  const timeoutId = setTimeout(() => {
+    showError();
+  }, 5000);
+
   fetch("https://api.adviceslip.com/advice")
     .then((res) => {
       if (!res.ok) {
         showError();
+        clearTimeout(timeoutId); // Clear the timeout if there's an error
       }
       return res.json();
     })
     .then((data) => {
       addContent(data.slip.advice, data.slip.id);
+      clearTimeout(timeoutId); // Clear the timeout if advice is successfully added
     })
     .catch((error) => {
       showError();
+      clearTimeout(timeoutId); // Clear the timeout on catch
     });
 };
 
