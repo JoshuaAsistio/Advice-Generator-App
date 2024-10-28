@@ -11,9 +11,17 @@ diceButton.addEventListener("click", () => {
 
 const generateRandomAdvice = () => {
   fetch("https://api.adviceslip.com/advice")
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        showError();
+      }
+      return res.json();
+    })
     .then((data) => {
       addContent(data.slip.advice, data.slip.id);
+    })
+    .catch((error) => {
+      showError();
     });
 };
 
@@ -26,4 +34,9 @@ const addContent = (adviceElementContent, adviceNumberElementContent) => {
     adviceNumberElementContent === 0
       ? "Generating your advice"
       : `ADVICE #${adviceNumberElementContent}`;
+};
+
+const showError = () => {
+  adviceElement.textContent = '"Please try again..."';
+  adviceNumberElement.innerHTML = "Failed to generate advise";
 };
